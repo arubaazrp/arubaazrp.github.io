@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulasi Menyatakan Cinta</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: #ffcccc; /* Warna background cinta */
+            background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20210309/pngtree-love-pink-lover-background-image_580366.jpg'); /* Motif cinta */
+            background-size: cover;
+            background-position: center;
+            overflow: hidden; /* Menghilangkan tampilan scroll */
+            position: relative;
+        }
+        .love-message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noBtn {
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="love-message">
+        <p>Apakah kamu mau menjadi pacarku?</p>
+    </div>
+    <button class="btn" id="yesBtn">Iya, Tentu Saja!</button>
+    <button class="btn" id="noBtn">Maaf, Tidak Bisa</button>
+
+    <script>
+        const loveMessage = document.querySelector('.love-message');
+        const yesButton = document.getElementById('yesBtn');
+        const noButton = document.getElementById('noBtn');
+
+        yesButton.addEventListener('click', function() {
+            loveMessage.innerHTML = "<p>Terima kasih, kamu membuatku sangat bahagia!</p>";
+            yesButton.style.display = 'none';
+            noButton.style.display = 'none';
+        });
+
+        noButton.addEventListener('click', function() {
+            loveMessage.innerHTML = "<p>Maaf jika aku mengganggu, semoga harimu menyenangkan.</p>";
+            loveMessage.style.color = 'Black';
+            loveMessage.style.fontSize = '20px';
+            yesButton.style.position = 'absolute';
+            yesButton.style.left = Math.random() * 80 + "vw";
+            yesButton.style.top = Math.random() * 80 + "vh";
+        });
+    </script>
+</body>
+</html>
